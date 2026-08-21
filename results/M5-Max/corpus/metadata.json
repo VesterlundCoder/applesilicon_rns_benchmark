@@ -1,0 +1,49 @@
+{
+  "format": "RDCMF6I1",
+  "description": "primitive projective integer 6x6 operators from corrected Ramanujan Dreams 6F5 Matrix.walk semantics",
+  "dim": 6,
+  "operator_count": 1000,
+  "outer_steps": 1000,
+  "operators_per_outer_step": 1.0,
+  "preset": "sparse_x1",
+  "shift": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "direction": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "z_num": 1,
+  "z_den": 2,
+  "max_operator_abs": "80048",
+  "max_operator_bits": 17,
+  "operator_exact_input_flags": {
+    "float32_integer_exact": true,
+    "df64_nominal_48bit_integer_exact": true,
+    "float64_integer_exact": true
+  },
+  "conservative_product_bound_bits": 17444,
+  "corpus_sha256": "6734cfeb3dcffe62af527937d2083c4f05916cff8f7c39714b2bde694f94e002",
+  "source_oracle": "lib/cmf_walk_corrected.py",
+  "reference_max_abs_bits": 9546,
+  "reference_sha256": "19552ce2cf6b7826aa9acebf7c4a3ab79e69f3c89d22d8bd94f100dfdcf9071e"
+}

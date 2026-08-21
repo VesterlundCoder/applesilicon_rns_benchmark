@@ -1,0 +1,19 @@
+-- The CXX compiler identification is AppleClang 21.0.0.21000101
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Homebrew prefix: /opt/homebrew
+-- Looking for C++ include boost/multiprecision/cpp_int.hpp
+-- Looking for C++ include boost/multiprecision/cpp_int.hpp - found
+-- The OBJCXX compiler identification is AppleClang 21.0.0.21000101
+-- Detecting OBJCXX compiler ABI info
+-- Detecting OBJCXX compiler ABI info - done
+-- Check for working OBJCXX compiler: /usr/bin/c++ - skipped
+-- Boost backend: 1
+-- GMPXX library: 
+-- FLINT library: 
+-- Configuring done (7.6s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/davidvesterlund/apple6f5_bench/M5-Max-dense/build

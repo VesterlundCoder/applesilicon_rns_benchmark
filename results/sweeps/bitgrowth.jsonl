@@ -1,0 +1,9 @@
+{"N": 50, "bits": 276, "K": 10, "modulus_bits": 300, "t_gmp_s": 0.000142625, "t_flint_s": 9.7833e-05, "t_rns_cpu_s": 0.00038825, "t_rns_exact_result_s": 0.000436, "crt_host_median_s": 4.8e-05}
+{"N": 100, "bits": 638, "K": 22, "modulus_bits": 660, "t_gmp_s": 0.000328958, "t_flint_s": 0.000272417, "t_rns_cpu_s": 0.001570583, "t_rns_exact_result_s": 0.001778, "crt_host_median_s": 0.000207}
+{"N": 200, "bits": 1460, "K": 49, "modulus_bits": 1470, "t_gmp_s": 0.000756083, "t_flint_s": 0.000737833, "t_rns_cpu_s": 0.006616334, "t_rns_exact_result_s": 0.007626, "crt_host_median_s": 0.00101}
+{"N": 300, "bits": 2356, "K": 79, "modulus_bits": 2370, "t_gmp_s": 0.001356291, "t_flint_s": 0.001394292, "t_rns_cpu_s": 0.017276125, "t_rns_exact_result_s": 0.018913, "crt_host_median_s": 0.001637}
+{"N": 500, "bits": 4283, "K": 143, "modulus_bits": 4290, "t_gmp_s": 0.003259, "t_flint_s": 0.002564708, "t_rns_cpu_s": 0.04601775, "t_rns_exact_result_s": 0.052409, "crt_host_median_s": 0.006391}
+{"N": 700, "bits": 6328, "K": 211, "modulus_bits": 6330, "t_gmp_s": 0.00438075, "t_flint_s": 0.005975292, "t_rns_cpu_s": 0.099899625, "t_rns_exact_result_s": 0.11515, "crt_host_median_s": 0.015251}
+{"N": 1000, "bits": 9546, "K": 319, "modulus_bits": 9570, "t_gmp_s": 0.010351041, "t_flint_s": 0.014857084, "t_rns_cpu_s": 0.42853275, "t_rns_exact_result_s": 0.477636, "crt_host_median_s": 0.049103}
+{"N": 1400, "bits": 14036, "K": 468, "modulus_bits": 14040, "t_gmp_s": 0.019706333, "t_flint_s": 0.0289585, "t_rns_cpu_s": 0.946088334, "t_rns_exact_result_s": 1.019094, "crt_host_median_s": 0.073005}
+{"N": 2000, "bits": 21071, "K": 703, "modulus_bits": 21090, "t_gmp_s": 0.094313459, "t_flint_s": 0.077736709, "t_rns_cpu_s": 1.768429542, "t_rns_exact_result_s": 2.044079, "crt_host_median_s": 0.27565}

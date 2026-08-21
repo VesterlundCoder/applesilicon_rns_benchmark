@@ -1,0 +1,1 @@
+{"backend":"rns_cpu","operator_count":770,"dim":6,"setup_s":0.001323167,"median_s":0.001631333,"min_s":0.001188625,"max_s":0.001841833,"mad_s":0.000184708,"repeats":7,"warmups":2,"threads":18,"K":15,"prime_bits":30,"modular_method":"Montgomery32","crt_host_median_s":0.000078,"exact_result_median_s":0.001709,"crt_backend":"Boost.Multiprecision"}

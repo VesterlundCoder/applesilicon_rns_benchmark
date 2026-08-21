@@ -1,0 +1,1 @@
+{"backend":"flint","operator_count":1002,"dim":6,"setup_s":0.000212125,"median_s":0.046923334,"min_s":0.01406925,"max_s":0.06723175,"mad_s":0.020308416,"repeats":7,"warmups":2,"threads":1,"max_abs_bits":9179}

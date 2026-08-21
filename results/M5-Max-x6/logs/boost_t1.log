@@ -1,0 +1,1 @@
+{"backend":"boost","operator_count":1002,"dim":6,"setup_s":0,"median_s":0.121617083,"min_s":0.085107083,"max_s":0.187441875,"mad_s":0.025821792,"repeats":7,"warmups":2,"implementation":"Boost.Multiprecision cpp_int -O3","max_abs_bits":9179}

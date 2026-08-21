@@ -1,0 +1,144 @@
+{
+  "label": "M5-Max",
+  "platform": "macOS-26.4-arm64-arm-64bit",
+  "machine": "arm64",
+  "python": "3.10.12 (main, May 23 2026, 16:17:41) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "logical_cpus": 18,
+  "packages": {
+    "numpy": "2.2.6",
+    "sympy": "1.14.0",
+    "flint": "0.9.0",
+    "gmpy2": "2.3.1"
+  },
+  "commands": {
+    "sw_vers": {
+      "command": [
+        "sw_vers"
+      ],
+      "returncode": 0,
+      "output": "ProductName:\t\tmacOS\nProductVersion:\t\t26.4\nBuildVersion:\t\t25E246"
+    },
+    "uname": {
+      "command": [
+        "uname",
+        "-a"
+      ],
+      "returncode": 0,
+      "output": "Darwin Mac.client 25.4.0 Darwin Kernel Version 25.4.0: Thu Mar 19 19:33:50 PDT 2026; root:xnu-12377.101.15~1/RELEASE_ARM64_T6050 arm64"
+    },
+    "hardware": {
+      "command": [
+        "system_profiler",
+        "SPHardwareDataType",
+        "-json"
+      ],
+      "returncode": 0,
+      "output": "{\n  \"SPHardwareDataType\" : [\n    {\n      \"_name\" : \"hardware_overview\",\n      \"activation_lock_status\" : \"activation_lock_enabled\",\n      \"boot_rom_version\" : \"18000.101.7\",\n      \"chip_type\" : \"Apple M5 Max\",\n      \"machine_model\" : \"Mac17,6\",\n      \"machine_name\" : \"MacBook Pro\",\n      \"model_number\" : \"Z1MZ001YKKS/A\",\n      \"number_processors\" : \"proc 18:6:0:12\",\n      \"os_loader_version\" : \"18000.101.7\",\n      \"physical_memory\" : \"128 GB\",\n      \"platform_UUID\" : \"45010124-E384-50E8-AE8B-74B7B0EC30FE\",\n      \"provisioning_UDID\" : \"00006050-001331A836EB401C\",\n      \"serial_number\" : \"F1VW7HM25J\"\n    }\n  ]\n}"
+    },
+    "display": {
+      "command": [
+        "system_profiler",
+        "SPDisplaysDataType",
+        "-json"
+      ],
+      "returncode": 0,
+      "output": "{\n  \"SPDisplaysDataType\" : [\n    {\n      \"_name\" : \"Apple M5 Max\",\n      \"spdisplays_mtlgpufamilysupport\" : \"spdisplays_metal4\",\n      \"spdisplays_ndrvs\" : [\n        {\n          \"_name\" : \"Color LCD\",\n          \"_spdisplays_display-product-id\" : \"a05f\",\n          \"_spdisplays_display-serial-number\" : \"fd626d62\",\n          \"_spdisplays_display-vendor-id\" : \"610\",\n          \"_spdisplays_display-week\" : \"0\",\n          \"_spdisplays_display-year\" : \"0\",\n          \"_spdisplays_displayID\" : \"1\",\n          \"_spdisplays_pixels\" : \"3456 x 2234\",\n          \"_spdisplays_resolution\" : \"1728 x 1117 @ 120.00Hz\",\n          \"spdisplays_ambient_brightness\" : \"spdisplays_yes\",\n          \"spdisplays_connection_type\" : \"spdisplays_internal\",\n          \"spdisplays_display_type\" : \"spdisplays_built-in-liquid-retina-xdr\",\n          \"spdisplays_main\" : \"spdisplays_yes\",\n          \"spdisplays_mirror\" : \"spdisplays_off\",\n          \"spdisplays_online\" : \"spdisplays_yes\",\n          \"spdisplays_pixelresolution\" : \"spdisplays_3456x2234Retina\"\n        }\n      ],\n      \"spdisplays_vendor\" : \"sppci_vendor_Apple\",\n      \"sppci_bus\" : \"spdisplays_builtin\",\n      \"sppci_cores\" : \"40\",\n      \"sppci_device_type\" : \"spdisplays_gpu\",\n      \"sppci_model\" : \"Apple M5 Max\"\n    }\n  ]\n}"
+    },
+    "clang": {
+      "command": [
+        "clang++",
+        "--version"
+      ],
+      "returncode": 0,
+      "output": "Apple clang version 21.0.0 (clang-2100.1.1.101)\nTarget: arm64-apple-darwin25.4.0\nThread model: posix\nInstalledDir: /Library/Developer/CommandLineTools/usr/bin"
+    },
+    "cmake": {
+      "command": [
+        "cmake",
+        "--version"
+      ],
+      "returncode": 0,
+      "output": "cmake version 4.3.2\n\nCMake suite maintained and supported by Kitware (kitware.com/cmake)."
+    },
+    "sysctl_brand": {
+      "command": [
+        "sysctl",
+        "-n",
+        "machdep.cpu.brand_string"
+      ],
+      "returncode": 0,
+      "output": "Apple M5 Max"
+    },
+    "sysctl_mem": {
+      "command": [
+        "sysctl",
+        "-n",
+        "hw.memsize"
+      ],
+      "returncode": 0,
+      "output": "137438953472"
+    },
+    "sysctl_perfcores": {
+      "command": [
+        "sysctl",
+        "-n",
+        "hw.perflevel0.physicalcpu"
+      ],
+      "returncode": 0,
+      "output": "6"
+    },
+    "sysctl_effcores": {
+      "command": [
+        "sysctl",
+        "-n",
+        "hw.perflevel1.physicalcpu"
+      ],
+      "returncode": 0,
+      "output": "12"
+    }
+  },
+  "numpy_config": {
+    "command": [
+      "/Users/davidvesterlund/freedomcode/freedomcode/stringtheory/cy-env/bin/python",
+      "-c",
+      "import numpy as np; np.show_config()"
+    ],
+    "returncode": 0,
+    "output": "Build Dependencies:\n  blas:\n    detection method: system\n    found: true\n    include directory: unknown\n    lib directory: unknown\n    name: accelerate\n    openblas configuration: unknown\n    pc file directory: unknown\n    version: unknown\n  lapack:\n    detection method: system\n    found: true\n    include directory: unknown\n    lib directory: unknown\n    name: accelerate\n    openblas configuration: unknown\n    pc file directory: unknown\n    version: unknown\nCompilers:\n  c:\n    commands: cc\n    linker: ld64\n    name: clang\n    version: 15.0.0\n  c++:\n    commands: c++\n    linker: ld64\n    name: clang\n    version: 15.0.0\n  cython:\n    commands: cython\n    linker: cython\n    name: cython\n    version: 3.1.0\nMachine Information:\n  build:\n    cpu: aarch64\n    endian: little\n    family: aarch64\n    system: darwin\n  host:\n    cpu: aarch64\n    endian: little\n    family: aarch64\n    system: darwin\nPython Information:\n  path: /private/var/folders/w5/_8wgjw3j5cg6mgrth3s2kg9m0000gn/T/build-env-g9clshsu/bin/python\n  version: '3.10'\nSIMD Extensions:\n  baseline:\n  - NEON\n  - NEON_FP16\n  - NEON_VFPV4\n  - ASIMD\n  found:\n  - ASIMDHP\n  not found:\n  - ASIMDFHM"
+  },
+  "git": {
+    "head": {
+      "command": [
+        "git",
+        "-C",
+        "/Users/davidvesterlund/Library/Mobile Documents/com~apple~CloudDocs/Desktop/rd-lumi-z3/RamanujanDreams-RNS-Mac",
+        "rev-parse",
+        "HEAD"
+      ],
+      "returncode": 0,
+      "output": "5fe133dcdc439e5afd0aba338c0600fea4e7389e"
+    },
+    "status": {
+      "command": [
+        "git",
+        "-C",
+        "/Users/davidvesterlund/Library/Mobile Documents/com~apple~CloudDocs/Desktop/rd-lumi-z3/RamanujanDreams-RNS-Mac",
+        "status",
+        "--porcelain=v1"
+      ],
+      "returncode": 0,
+      "output": "?? benchmarks/\n?? meijer_cmf/axis_tables.pkl\n?? meijer_cmf/campaign_meijer_1M.sh\n?? meijer_cmf/colab_generate_trajectories.ipynb\n?? meijer_cmf/overnight_meijer.sh\n?? meijer_cmf/parallel_export.sh\n?? meijer_cmf/run_local_pipeline.py\n?? meijer_cmf/runs/"
+    },
+    "remote": {
+      "command": [
+        "git",
+        "-C",
+        "/Users/davidvesterlund/Library/Mobile Documents/com~apple~CloudDocs/Desktop/rd-lumi-z3/RamanujanDreams-RNS-Mac",
+        "remote",
+        "-v"
+      ],
+      "returncode": 0,
+      "output": "origin\thttps://github.com/VesterlundCoder/RamanujanDreams-RNS-Mac.git (fetch)\norigin\thttps://github.com/VesterlundCoder/RamanujanDreams-RNS-Mac.git (push)"
+    }
+  }
+}

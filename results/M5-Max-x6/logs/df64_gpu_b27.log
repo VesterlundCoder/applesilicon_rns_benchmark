@@ -1,0 +1,1 @@
+{"backend":"df64_gpu","operator_count":1002,"dim":6,"device":"Apple M5 Max","setup_s":0.00021375,"gpu_median_s":0.150573208928,"gpu_min_s":0.134280708618,"gpu_mad_s":0.0101259164512,"wall_median_s":0.185111584,"batch":27,"repeats":7,"warmups":2,"normalization":"power-of-two after every operator","exp_sum":9179,"trajectories_per_gpu_s":179.314768}

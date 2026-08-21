@@ -1,0 +1,1 @@
+{"backend":"accelerate","operator_count":1000,"dim":6,"setup_s":7.1666e-05,"median_s":0.00039075,"min_s":0.000390625,"max_s":0.000390792,"mad_s":4.1e-08,"repeats":7,"warmups":2,"normalization":"power-of-two after every operator","exp_sum":9546}

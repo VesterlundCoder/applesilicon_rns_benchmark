@@ -1,0 +1,14 @@
+--- a/src/main_cmf_df64.mm
++++ b/src/main_cmf_df64.mm
+@@
+-            auto g0 = std::chrono::steady_clock::now();
+             [cb commit];
+             [cb waitUntilCompleted];
+-            auto g1 = std::chrono::steady_clock::now();
+-            gpuSeconds += std::chrono::duration<double>(g1 - g0).count();
++            // Metal's command-buffer timestamps isolate GPU execution from
++            // CPU submission/wait overhead. Keep TOTAL wall time separately.
++            if (cb.GPUEndTime > cb.GPUStartTime)
++                gpuSeconds += cb.GPUEndTime - cb.GPUStartTime;
+             if (cb.status == MTLCommandBufferStatusError)
+                 throw std::runtime_error([[cb.error localizedDescription] UTF8String]);

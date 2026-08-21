@@ -1,0 +1,6 @@
+{
+  "K": 15,
+  "prime_bits": 30,
+  "modulus_bits": 450,
+  "criterion": "product(primes) > 2*max_abs(exact_reference)"
+}

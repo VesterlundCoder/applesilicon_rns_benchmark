@@ -1,0 +1,1 @@
+{"backend":"gmp","operator_count":770,"dim":6,"setup_s":0.000951541,"median_s":0.002466167,"min_s":0.002393625,"max_s":0.002503459,"mad_s":3.0834e-05,"repeats":7,"warmups":2,"max_abs_bits":445}

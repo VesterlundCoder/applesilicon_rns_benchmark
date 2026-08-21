@@ -1,0 +1,20 @@
+{
+  "label": "M5-Max",
+  "created_unix": 1787316325.402244,
+  "preset": "sparse_x1",
+  "outer_steps": 1000,
+  "repeats": 7,
+  "warmups": 2,
+  "threads": 18,
+  "gpu_batches": [
+    1,
+    26
+  ],
+  "rns_capacity": {
+    "K": 319,
+    "prime_bits": 30,
+    "modulus_bits": 9570,
+    "criterion": "product(primes) > 2*max_abs(exact_reference)"
+  },
+  "scientific_note": "Batch>1 Metal results replay the same exact operator chain to measure saturated kernel throughput; do not interpret them as unique-trajectory application throughput. production_df64.jsonl uses unique trajectories."
+}
