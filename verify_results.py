@@ -32,6 +32,30 @@ def load_reference(path: Path) -> List[int]:
     return vals
 
 
+def _prime32(n: int) -> bool:
+    if not 2 <= n < (1 << 31): return False
+    for p in (2,3,5,7,11):
+        if n % p == 0: return n == p
+    d=n-1;s=0
+    while d%2==0:d//=2;s+=1
+    for a in (2,3,5,7,11):
+        x=pow(a,d,n)
+        if x in (1,n-1):continue
+        for _ in range(s-1):
+            x=x*x%n
+            if x==n-1:break
+        else:return False
+    return True
+
+
+def validate_rns(primes, residues):
+    if not primes or len(set(primes)) != len(primes) or len(residues) != len(primes):
+        raise ValueError("Expected distinct nonempty moduli and matching residue rows")
+    for p,row in zip(primes,residues):
+        if not _prime32(p) or len(row)!=E or any(not 0<=r<p for r in row):
+            raise ValueError("Invalid 31-bit prime, residue shape or canonical residue")
+
+
 def load_rns(path: Path) -> Tuple[List[int], List[List[int]]]:
     data = path.read_bytes()
     if len(data) < 16:
@@ -47,10 +71,12 @@ def load_rns(path: Path) -> Tuple[List[int], List[List[int]]]:
     off += 4 * K
     flat = struct.unpack_from(f"<{K * E}I", data, off)
     residues = [list(flat[k * E:(k + 1) * E]) for k in range(K)]
+    validate_rns(primes,residues)
     return primes, residues
 
 
 def crt_centered(primes: Sequence[int], residues: Sequence[Sequence[int]]) -> Tuple[List[int], int]:
+    validate_rns(primes,residues)
     # Incremental CRT; reconstruct all 36 entries in parallel.
     x = [0] * E
     M = 1
@@ -62,7 +88,7 @@ def crt_centered(primes: Sequence[int], residues: Sequence[Sequence[int]]) -> Tu
             x[e] += M * t
         M *= p
     half = M // 2
-    x = [v - M if v > half else v for v in x]
+    x = [v - M if 2*v >= M else v for v in x]
     return x, M
 
 
@@ -129,6 +155,10 @@ def verify_rns(dump: Path, ref: Sequence[int]) -> dict:
 
 def verify_f64(dump: Path, ref: Sequence[int]) -> dict:
     vals, exp_sum = load_f64(dump)
+    if not all(math.isfinite(x) for x in vals):
+        return {"kind":"floating","dump":str(dump),"normalization_exp_sum":exp_sum,
+                "all_finite":False,"projective_max_abs_error":None,
+                "projective_max_rel_error_nonzero":None}
     a = float_projective(vals)
     e = exact_projective(ref)
     abs_err = [abs(x - y) for x, y in zip(a, e)]
@@ -160,7 +190,9 @@ def main() -> int:
     if args.output:
         args.output.parent.mkdir(parents=True, exist_ok=True)
         args.output.write_text("".join(json.dumps(r, sort_keys=True) + "\n" for r in rows))
-    return 1 if any(r.get("kind") in {"rns", "exact_integer"} and not r.get("correct") for r in rows) else 0
+    failed=any((r.get("kind") in {"rns","exact_integer"} and not r.get("correct")) or
+               (r.get("kind")=="floating" and not r.get("all_finite")) for r in rows)
+    return int(failed)
 
 
 if __name__ == "__main__":

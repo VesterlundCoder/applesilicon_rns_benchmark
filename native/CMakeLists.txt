@@ -2,6 +2,11 @@ cmake_minimum_required(VERSION 3.20)
 project(Apple6F5Bench LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+include(CTest)
+if(BUILD_TESTING)
+  add_executable(test_modular_contract test_modular_contract.cpp)
+  add_test(NAME modular_contract COMMAND test_modular_contract)
+endif()
 
 # --- Homebrew discovery (Apple Silicon) ---------------------------------------
 # Apple clang does not search Homebrew's prefix by default, and Boost is header

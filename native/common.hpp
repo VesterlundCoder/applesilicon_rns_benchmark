@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <array>
 #include <chrono>
+#include <cmath>
 #include <cstdint>
 #include <cstring>
 #include <fstream>
@@ -142,7 +143,8 @@ inline uint32_t mont_pinv32(uint32_t p) {
 }
 
 inline MontPrime make_mont_prime(uint32_t p) {
-    if ((p & 1u) == 0u) throw std::runtime_error("Montgomery modulus must be odd");
+    if (p <= 2 || p >= (1u << 31) || !is_prime_u32(p))
+        throw std::runtime_error("Montgomery modulus must be an odd prime below 2^31");
     return MontPrime{p, mont_pinv32(p), static_cast<uint32_t>((uint64_t(1) << 32) % p), 0u};
 }
 
