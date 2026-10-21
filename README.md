@@ -1,5 +1,7 @@
 # Apple Silicon 6F5 CMF Benchmark Suite
 
+
+Current correctness contract, validation and remaining hardware checks: [research readiness](docs/RESEARCH_READINESS.md).
 Reproducible benchmark code for the corrected Ramanujan Dreams 6F5 `Matrix.walk`
 workload on Apple Silicon CPU and Metal GPU.
 
